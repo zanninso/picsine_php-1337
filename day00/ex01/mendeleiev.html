@@ -2,6 +2,10 @@
 
 <head>
 	<style>
+		img {
+			height: 16vw;
+		}
+
 		.coral {
 			background: coral;
 		}
@@ -65,7 +69,13 @@
 			height: 60%;
 			line-height: 3.1vw;
 		}
-
+		.special {
+			font-weight: bold;
+			font-size: 1.4vw;
+			text-align: center;
+			height: 60%;
+			line-height: 3.1vw;
+		}
 		.cell {
 			width: 0.18%;
 			height: 5vw;
@@ -80,7 +90,7 @@
 
 <body>
 	<h1></h1>
-	<table>
+	<table contenteditable="true">
 		<tbody>
 			<tr>
 				<td class="cell">
@@ -90,7 +100,13 @@
 						<div class="number">1</div>
 					</div>
 				</td>
-				<td colspan="16">
+				<td contenteditable="false">
+				</td>
+				<td contenteditable="false" style="text-align: center;" rowspan="3" colspan="10">
+					<img src="https://www.centredessciencesdemontreal.com/sites/default/files/styles/teaser_view/public/2017-04/de-quoi-est-compose-l-atome.png?itok=pKL1byWQ"
+					 alt="atom">
+				</td>
+				<td contenteditable="false" colspan="5">
 				</td>
 				<td class="cell">
 					<div class="gold">
@@ -114,8 +130,6 @@
 						<div class="symbol">Be</div>
 						<div class="number">4</div>
 					</div>
-				</td>
-				<td colspan="10" rowspan="2">
 				</td>
 				<td class="cell">
 					<div class="lightskyblue">
@@ -490,6 +504,11 @@
 					</div>
 				</td>
 				<td class="cell">
+						<div class="saddlebrown">
+								<div class="weight"></div>
+								<div class="special">57-71</div>
+								<div class="number"></div>
+							</div>
 				</td>
 				<td class="cell">
 					<div class="lightgreen">
@@ -613,6 +632,11 @@
 					</div>
 				</td>
 				<td class="cell">
+					<div class="violet">
+						<div class="weight"></div>
+						<div class="special">89-103</div>
+						<div class="number"></div>
+					</div>
 				</td>
 				<td class="cell">
 					<div class="lightgreen">
@@ -721,7 +745,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td rowspan="1" colspan="18"></td>
+				<td style="height: 4vw;" rowspan="1" colspan="18"></td>
 			</tr>
 			<tr>
 				<td colspan="2" rowspan="2"></td>

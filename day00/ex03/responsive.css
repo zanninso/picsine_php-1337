@@ -1,0 +1,83 @@
+img {
+    height: 16vw;
+}
+
+.coral {
+    background: coral;
+}
+
+.hotpink {
+    background: hotpink;
+}
+
+.lightskyblue {
+    background: lightskyblue;
+}
+
+.lightgreen {
+    background: lightgreen;
+}
+
+.orange {
+    background: orange;
+}
+
+.aquamarine {
+    background: aquamarine;
+}
+
+.violet {
+    background: violet;
+}
+
+.saddlebrown {
+    background: saddlebrown;
+}
+
+.Noble-Gas {
+    background: lightgray;
+}
+
+.moccasin {
+    background: moccasin;
+}
+
+.gold {
+    background: gold;
+}
+
+.weight {
+    font-size: 1vw;
+    text-align: right;
+    height: 20%;
+}
+
+.number {
+    font-size: 1vw;
+    text-align: left;
+    height: 20%;
+}
+
+.symbol {
+    font-weight: bold;
+    font-size: 2vw;
+    text-align: center;
+    height: 60%;
+    line-height: 3.1vw;
+}
+.special {
+    font-weight: bold;
+    font-size: 1.4vw;
+    text-align: center;
+    height: 60%;
+    line-height: 3.1vw;
+}
+.cell {
+    width: 0.18%;
+    height: 5vw;
+}
+
+.cell>div {
+    height: 100%;
+    width: 100%;
+}
