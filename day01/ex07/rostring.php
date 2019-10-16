@@ -11,5 +11,5 @@ if(sizeof($argv) >= 2)
     $argv = ft_split($argv[1]);
     array_push($argv,$argv[0]);
     array_shift($argv);
-    echo trim(implode ( " ", $argv))."\n";
+    echo trim(implode (" ", $argv))."\n";
 }
