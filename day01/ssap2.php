@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 function ft_split($arg)
 {
@@ -5,27 +6,27 @@ function ft_split($arg)
     return ($ret);
 }
 
-function comparable($a, $b)
+function is_alpha($c)
 {
-    if(is_alphabet($a) && is_numeric($b))
-        return(strcmp($a,$b));
-    if(is_numeric($a) || is_numeric($b))
-    {
-        if(is_alphabet($a) || is_alphabet($b))
-            return(is_alphabet($a) ? -1 : 1);
-        if(!is_numeric($a) || !is_numeric($b))
-            return(!is_numeric($a) ? -1 : 1);
-        return(strcmp($a,$b));
-    }
-    if(is_alphabet($a) || is_alphabet($a))
-        return(is_alphabet($a) ? -1 : 1);
-    return(strcmp($a,$b));
+    return (($c >= 'a' && $c <= 'z') || ($c >= 'A' && $c <= 'Z'));
 }
 
 array_shift($argv);
 $list = array();
-foreach($argv as $value)
-    $list = array_merge($list, ft_split($value)); 
-usort($list, "compar");
-foreach($list as $value)
-   echo "$value\n";
+foreach ($argv as $value)
+    $list = array_merge($list, ft_split($value));
+
+sort($list, SORT_STRING | SORT_FLAG_CASE);
+$list_num = array();
+$list_other = array();
+foreach ($list as $value) {
+    if (is_alpha($value[0])) {
+        echo "$value\n";
+    } else if (is_numeric($value[0])) {
+        array_push($list_num, $value);
+    } else {
+        array_push($list_other, $value);
+    }
+}
+echo implode("\n", $list_num) . "\n";
+echo implode("\n", $list_other) . "\n";

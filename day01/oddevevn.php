@@ -1,4 +1,6 @@
+#!/usr/bin/php
 <?php
+echo "Entre a number: ";
 while (FALSE !== ($line = fgets(STDIN))) {
     $raw_line = substr_replace($line, "", -1);
     $line = trim($line);
@@ -8,4 +10,5 @@ while (FALSE !== ($line = fgets(STDIN))) {
         echo "le chiffre $raw_line est impair\n";
     else 
         echo "le chiffre $raw_line est pair\n";
+    echo "Entre a number: ";
  }
