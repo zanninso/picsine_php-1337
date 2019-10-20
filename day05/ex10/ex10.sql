@@ -1,0 +1,1 @@
+SELECT titre as `Titre` , resum as `Resume`, annee_prod FROM `film` f, `genre` g WHERE g.id_genre = f.id_genre and g.nom = 'erotic' ORDER BY annee_prod DESC

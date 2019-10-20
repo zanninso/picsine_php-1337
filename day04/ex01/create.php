@@ -1,19 +1,19 @@
 <?php
-if ($_POST["submit"] == "OK")
+if ($_POST["submit"] == "OK" && $_POST["login"] != "" && $_POST["passwd"] != "")
 {
     $error = 0;
     $salt = "as545ldn56DAD_ayh@564";
-    $passwd = array();
-    if(file_exists("private/passwd"))
+    $users = [];
+    if(!file_exists("../private"))
+        mkdir("../private", 0777, true);
+    if(file_exists("../private/passwd"))
     {
-        $file = file_get_contents("private/passwd");
-        $passwd = unserialize($file);
-    }
-    else
-        mkdir("private", 0777, true);
-    foreach($passwd as $pswd)
+        $file = file_get_contents("../private/passwd");
+        $users = $file ? unserialize($file) : [];
+    }    
+    foreach($users as $user)
     {
-        if($pswd["login"] ==  $_POST["login"])
+        if($user["login"] ==  $_POST["login"])
         {
             $error = 1;
             echo "ERROR\n";
@@ -22,9 +22,11 @@ if ($_POST["submit"] == "OK")
     }
     if(!$error)
     {
-        $passwd[] = array("login" => $_POST["login"],"passwd" => hash('whirlpool', $salt.$_POST["passwd"]));
-        file_put_contents("private/passwd",serialize($passwd));
+        $users[] = array("login" => $_POST["login"],"passwd" => hash('whirlpool', $salt.$_POST["passwd"]));
+        file_put_contents("../private/passwd",serialize($users));
+        echo "OK\n";
     }
-    print_r($passwd);
 }
+else 
+    echo "ERROR\n";
 ?>

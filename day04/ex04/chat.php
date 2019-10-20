@@ -1,11 +1,17 @@
 <?php
-    $salt = "as545ldn56DAD_ayh@564";
-    if(file_exists("private/chat"))
+session_start();
+    if($_SESSION["loggued_on_user"] != "" && file_exists("../private/chat"))
     {
-        $file = file_get_contents("private/passwd");
-        $messages = unserialize($file);
-        foreach($messages as $msg)
+        $fp = fopen("../private/chat","r");
+        $file = NULL;
+        if (flock($fp, LOCK_SH))
         {
-            echo '['.09:42.']<b>'.$msg["user"].'</b>:'.$msg["user"]'<br/>';
+            $file = file_get_contents("../private/chat");
+            flock($fp,LOCK_UN);
+            fclose($fp);
         }
+        date_default_timezone_set("UTC");
+        $messages = ($file ? unserialize($file) : []);
+        foreach($messages as $msg)
+            echo '['.date('h:i', $msg["time"]).'] <b>'.$msg["login"].'</b>: '.$msg["msg"].'<br/>';
     }

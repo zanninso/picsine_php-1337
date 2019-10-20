@@ -1,0 +1,1 @@
+select  nom, prenom, date(date_naissance) as `date_naissance`  from fiche_personne  ORDER BY nom ASC
