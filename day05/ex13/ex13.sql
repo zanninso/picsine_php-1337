@@ -1,1 +1,1 @@
-SELECT  round(avg(nbr_siege)) as 'moyenne' FROM `salle`
+SELECT  round(avg(nb_seats)) as 'average' FROM `cinema` GROUP by id_cinema;

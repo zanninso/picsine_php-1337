@@ -1,1 +1,13 @@
-insert INTO ft_table (login,groupe, date_de_creation) SELECT nom as login,'other' as groupe, date_naissance as date_de_creation FROM fiche_personne WHERE CHAR_LENGTH(nom) < 9 AND nom LIKE 'a%' ORDER BY nom LIMIT 10
+insert INTO ft_table (login,`group`,creation_date) 
+SELECT 
+    last_name as login,
+    'other' as groupe,
+    birthdate as creation_date 
+FROM 
+    user_card 
+WHERE 
+    CHAR_LENGTH(last_name) < 9 AND 
+    last_name LIKE '%a%' 
+ORDER BY 
+    last_name 
+LIMIT 10;

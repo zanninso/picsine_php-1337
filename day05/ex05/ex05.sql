@@ -1,1 +1,1 @@
-delete from ft_table LIMIT 5
+delete from ft_table where id < 6;

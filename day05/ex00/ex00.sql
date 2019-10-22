@@ -1,1 +1,1 @@
-create DATABASE `db_aait-ihi`
+create DATABASE `db_aait-ihi`;

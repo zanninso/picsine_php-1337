@@ -1,1 +1,3 @@
-SELECT count(*) FROM `film` WHERE (date_debut_affiche >= '2006-10-30' or date_fin_affiche <= '2007-07-27') or ((MONTH(date_debut_affiche) = 12 and DAY(date_debut_affiche) = 24) or (MONTH(date_fin_affiche) = 12 and DAY(date_fin_affiche) = 24))
+SELECT count(DISTINCT id_film) as movies
+FROM `member_history`
+WHERE (date(date) BETWEEN '2006-10-30' and '2007-07-27') or '12-24' = date_format(date,"%m-%d");

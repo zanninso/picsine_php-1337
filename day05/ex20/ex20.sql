@@ -7,4 +7,4 @@ SELECT
 FROM `film` f
 left join `distrib` ON distrib.id_distrib = f.id_distrib
 left join `genre` ON genre.id_genre = f.id_genre
-WHERE f.id_genre BETWEEN 4 AND 8
+WHERE f.id_genre BETWEEN 4 AND 8;

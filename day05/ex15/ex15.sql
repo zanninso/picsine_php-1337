@@ -1,1 +1,1 @@
-SELECT  REVERSE(SUBSTRING(telephone, 2, CHAR_LENGTH(telephone) - 1)) as enohpelet  FROM `distrib` WHERE telephone like '05%'
+SELECT  REVERSE(SUBSTRING(phone_number, 2, CHAR_LENGTH(phone_number) - 1)) as `enohpelet`  FROM `distrib` WHERE phone_number like '05%';
