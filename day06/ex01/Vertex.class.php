@@ -1,11 +1,13 @@
 <?php
+require_once "Color.class.php";
+
 class Vertex
 {
-    private			$_x;
-    private			$_y;
-    private			$_z;
-    private			$_w;
-    private Color 	$_color;
+    private $_x;
+    private $_y;
+    private $_z;
+    private $_w;
+    private $_color;
 	static $verbose = false;
 
 	function __construct(array $cmp)
@@ -14,14 +16,21 @@ class Vertex
 		$this->_y = $cmp["y"];
 		$this->_z = $cmp["z"];
 		$this->_w = $cmp["w"] ? $cmp["w"] : 1.0;
-		$this->color = new color($cmp["color", 255, 255, 255); 
+        $this->color = $cmp["color"]; 
+        if(self::$verbose)
+            echo $this->__toString()." constructed\n";
 	}
-
-	function __toString()
+    function __destruct()
     {
-		$string = "x : $_x y : $_y z : $_z w : $_w";
-		if($verbose)
-		$string .= "color : ".$color.tostring();
+        if(self::$verbose)
+            echo $this->__toString()." destructed\n";
+    }
+	public function __toString()
+    {
+		$string = "Vertex( x:$this->_x, y:$this->_y, z:$this->_z, w:$this->_w";
+		if(self::$verbose)
+            $string .= ", " . $this->color;
+        $string .= " )";
 		return($string);
 	}
 	
@@ -37,7 +46,7 @@ class Vertex
 	
     function set_x($value)
     {
-        _x = $value;
+        $this->_x = $value;
 	}
 	
 	function get_y()
