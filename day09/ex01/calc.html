@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div action="">
+        <input type="text" name="" id="lm">
+        <select name="operation" id="op">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" name="" id="rm">
+        <input type="submit" onclick="do_op()" value="Try me!">
+    </div>
+</body>
+<script>
+    setInterval(function () { alert("Please, use me..."); }, 30000);
+    function do_op() {
+        var num = new RegExp(/^\+?\d+$/);
+        var op1 = document.getElementById("lm").value;
+        var op2 = document.getElementById("rm").value;
+        var operation = document.getElementById("op").value;
+        if (!num.test(op1) || !num.test(op2)) {
+            alert("Error :(");
+            return;
+        }
+        op1 = Number(op1);
+        op2 = Number(op2);
+        if ((operation == "%" || operation == "/") && op2 == 0) {
+            console.log("It’s over 9000!");
+            alert("It’s over 9000!");
+            return;
+        }
+        var result;
+        switch (operation) {
+            case "+":
+                result = op1 + op2;
+                break;
+            case "-":
+                result = op1 - op2;
+                break;
+            case "/":
+                result = op1 / op2;
+                break;
+            case "*":
+                result = op1 * op2;
+                break;
+            case "%":
+                result = op1 % op2;
+                break;
+        }
+        console.log(result);
+        alert(result);
+    }
+</script>
+
+</html>

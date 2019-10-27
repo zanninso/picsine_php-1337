@@ -1,0 +1,10 @@
+<- Matrix ----------------------------------------------------------------------
+The Matrix class 
+
+is the same class we just add one fucntion :
+
+public function symetrie_matrice() : that do creating a new instance of the the 
+current Matrix and make it symetrique;
+
+
+---------------------------------------------------------------------- Matrix ->

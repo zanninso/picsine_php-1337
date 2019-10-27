@@ -8,36 +8,41 @@ class color
 
     public function __construct(array $color)
     {
-        if($color["rgb"])
+        if(isset($color["rgb"]))
         {
             $this->red = (intval($color["rgb"]) >> 16) & 255;
             $this->green = (intval($color["rgb"]) >> 8) & 255;
             $this->blue = intval($color["rgb"]) & 255;
         }
-        else 
+        else if(isset($color["red"]) && isset($color["green"]) && isset($color["blue"]))
         {
             $this->red = intval($color["red"]);
             $this->green = intval($color["green"]);
             $this->blue = intval($color["blue"]);
         }
+        else 
+            return (NULL);
         if(self::$verbose)
-            echo $this->__toString()." constructed\n";
+            echo $this->__toString()." constructed.\n";
     }
 
     public function __destruct()
     {
         if(self::$verbose)
-            echo $this->__toString()."destructed\n";
+            echo $this->__toString()." destructed.\n";
     }
 
     public function __toString()
     {
-        return ("Color ( red: $this->red, green: $this->green, blue: $this->blue )");
+        $string = "Color( red: ".substr("  ", 0, 3 - strlen((string)$this->red)).$this->red.", ";
+        $string .= "green: ".substr("  ", 0, 3 - strlen((string)$this->green)).$this->green.", ";;
+        $string .= "blue: ".substr("  ", 0, 3 - strlen((string)$this->blue)).$this->blue." )";
+        return ($string);
     }
 
     static function doc()
     {
-        echo  file_get_contents("Color.doc.txt");
+        return (file_get_contents("Color.doc.txt")."\n");
     }
 
     public function add($c)

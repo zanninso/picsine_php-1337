@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" utf>
+<meta charset="UTF-8">
+<head>
+<script src="todo.js"></script>
+<style>
+    #ft_list{
+        height: 500px;
+        border: 1px solid black;
+        background-color: rgb(233, 146, 64);
+        width: 400px;
+        margin: 5vh auto;
+        overflow-y: auto;
+    }
+    #ft_list div
+    {
+        margin: 1px 0;
+        height: 40px;
+        background: rgb(249, 216, 188);;
+    }
+     #new
+     {
+         height: 50px;
+         width: 200px;
+         margin: auto;
+         display: block;
+     }
+</style>
+</head>
+<body onload="getCookies()">
+    <div id="ft_list" ></div>
+    <button id="new" onclick="createTodo()" name="new">New</button>
+</body>
+</html>

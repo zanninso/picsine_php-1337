@@ -1,0 +1,13 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class 
+
+An instance can be contructed from three abligatory caracteristique (x,y,z) value:
+new Vertex( array( 'x' => 15, 'y'=>6, 'z'=> 2) );
+and two optionale 
+the new coordinate w and the color.
+
+
+The class provides the following methods :
+
+this class does not contain any operated methods.
+---------------------------------------------------------------------- Vertex ->
